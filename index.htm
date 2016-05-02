@@ -99,11 +99,25 @@
         </section>
         <button id="load_code_button">Load</button>
     </form>
-    
+
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script> 
     <script src="libs/app/App.js"></script>
     <script src="libs/jsonTree/jsonTree.js"></script>
     <script src="jsonTreeViewer.js"></script>
     <script>
+      $.urlParam = function(name){
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        if (results==null){
+          return null;
+        }
+        else{
+          return results[1] || 0;
+        }
+      };
+
+
+
+      /*
         var example = '{\
             "firstName": "John",\
             "lastName": "Smith",\
@@ -128,6 +142,7 @@
                 }\
             ]\
         }';
+        */
 
         jsonTreeViewer.parse(example);
     </script>
